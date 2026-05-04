@@ -507,6 +507,10 @@ function App() {
         <Route path="/post/:id" element={<DeepLinkRedirect />} />
         <Route path="/community/:id" element={<DeepLinkRedirect />} />
         <Route path="/u/:id" element={<DeepLinkRedirect />} />
+        <Route path="/trailer/:id" element={<DeepLinkRedirect />} />
+        <Route path="/creator/:id" element={<DeepLinkRedirect />} />
+        <Route path="/movie/:id" element={<DeepLinkRedirect />} />
+        <Route path="/tvshow/:id" element={<DeepLinkRedirect />} />
         
         {/* Catch-all route */}
         <Route path="*" element={<Home />} />

@@ -219,7 +219,7 @@ function App() {
             <div className="grid gap-6">
               {UI_CONTENT.homeFaqs.map((faq, i) => (
                 <div key={i} className="glass-card p-8 rounded-3xl border border-soft-grey hover:border-primary-container/30 transition-colors">
-                  <h4 className="text-xl font-bold text-white mb-4">{faq.q}</h4>
+                  <h4 className="text-deep-black font-bold text-black mb-4">{faq.q}</h4>
                   <p className="text-deep-black/60 leading-relaxed">{faq.a}</p>
                 </div>
               ))}

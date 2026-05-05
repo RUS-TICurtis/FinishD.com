@@ -155,27 +155,19 @@ function Home() {
             <div className="absolute -top-10 -right-10 w-40 h-40 bg-vibrant-green/20 blur-[80px] rounded-full"></div>
             <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-vibrant-green/10 blur-[80px] rounded-full"></div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Categories */}
-      <section className="px-8 py-12">
-        <div className="max-w-[1440px] mx-auto flex flex-wrap justify-center gap-4">
-          {['Sci-Fi Night', 'Indie Gems', 'Noir Rewind', 'Action Pulse', 'Docs & Reality'].map((cat, i) => (
-            <span key={i} className="px-6 py-2 rounded-full glass-card border-vibrant-green/10 text-deep-black/80 text-sm font-bold">
-              {cat}
-            </span>
-          ))}
-        </div>
-      </section>
-
-      {/* Trailer Grid */}
-      <section className="px-8 py-24 bg-soft-grey/20">
-        <div className="max-w-[1440px] mx-auto">
-          <div className="flex justify-between items-end mb-12">
-            <div className="space-y-2">
-              <h3 className="text-4xl font-bold text-deep-black">Fresh Trailers</h3>
-              <p className="text-on-surface/60">Curated for your cinematic taste.</p>
+        {/* FAQ Section */}
+        <section className="px-8 py-24 bg-soft-grey/30">
+          <div className="max-w-[1000px] mx-auto">
+            <h3 className="text-4xl font-bold text-deep-black mb-12 text-center">Frequently Asked Questions</h3>
+            <div className="grid gap-6">
+              {UI_CONTENT.homeFaqs.map((faq, i) => (
+                <div key={i} className="glass-card p-8 rounded-3xl border border-soft-grey hover:border-primary-container/30 transition-colors">
+                  <h4 className="text-deep-black font-bold text-black mb-4">{faq.q}</h4>
+                  <p className="text-deep-black/60 leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
             </div>
             <button className="text-vibrant-green font-bold flex items-center gap-2 hover:opacity-80">
               View All <LucideChevronRight size={18} />

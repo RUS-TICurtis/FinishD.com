@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { LucideBolt, LucideRocket, LucideApple, LucidePlay, LucideChevronRight, LucideChatBubble, LucideRefreshCcw, LucideStar, LucideGlobe, LucideHeart, LucideShare2, LucideX, LucideUpload, LucideCheckCircle, LucideXCircle, LucideAlertCircle, LucideGavel, LucideShieldCheck } from 'lucide-react'
+import { LucideBolt, LucideRocket, LucideApple, LucidePlay, LucideChevronRight, LucideRefreshCcw, LucideStar, LucideGlobe, LucideHeart, LucideShare2, LucideX, LucideUpload, LucideCheckCircle, LucideXCircle, LucideAlertCircle, LucideGavel, LucideShieldCheck } from 'lucide-react'
 import { LEGAL_CONTENT } from './content/legal'
 
 // Mock Data / Content (Static UI strings)

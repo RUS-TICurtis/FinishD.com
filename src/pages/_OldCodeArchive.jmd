@@ -1,0 +1,324 @@
+/* === OLD CODE ARCHIVE === */
+
+/* --- Original src/pages/AboutPage.jsx --- */
+import React from 'react';
+import { LucideRocket, LucideUsers, LucideEye } from 'lucide-react';
+
+function AboutPage() {
+  return (
+    <div className="pt-32 pb-24 px-8 min-h-screen">
+      <div className="max-w-[1000px] mx-auto space-y-24">
+        {/* Header Section */}
+        <section className="text-center space-y-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-vibrant-green/10 border border-vibrant-green/20 text-vibrant-green text-sm font-bold uppercase tracking-widest">
+            Our Mission
+          </div>
+          <h1 className="text-5xl md:text-7xl font-black text-deep-black tracking-tighter">
+            Redefining the <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-vibrant-green to-vibrant-green/60">Social Entertainment</span> Experience
+          </h1>
+          <p className="text-xl text-on-surface/70 max-w-2xl mx-auto leading-relaxed">
+            FinishD was born out of a simple frustration: discovering, discussing, and tracking what to watch shouldn't be a solitary, fragmented experience. We're bringing the global conversation back to the content itself.
+          </p>
+        </section>
+
+        {/* Story Section */}
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-soft-grey/30 p-8 md:p-16 rounded-[3rem] border border-deep-black/5 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-vibrant-green/10 blur-[100px] rounded-full"></div>
+          <div className="space-y-6 relative z-10">
+            <h2 className="text-3xl font-bold text-deep-black">The Story of FinishD</h2>
+            <p className="text-lg text-on-surface/70 leading-relaxed">
+              We noticed that while streaming services offered endless catalogs, they lacked the community feel of the theater lobby or the water cooler. You'd watch a mind-bending finale, but had nowhere to instantly share your theories.
+            </p>
+            <p className="text-lg text-on-surface/70 leading-relaxed">
+              FinishD was created to bridge this gap. By combining a dynamic creator feed with comprehensive watchlists and seamless deeplinking, we're building the ultimate hub for movie buffs and TV series bingers to unite.
+            </p>
+          </div>
+          <div className="relative h-[400px] rounded-[2rem] overflow-hidden shadow-2xl">
+            <img src="/photo1.jpg" alt="FinishD App Experience" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-black/60 to-transparent"></div>
+          </div>
+        </section>
+
+        {/* Vision Grid */}
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="glas p-8 rounded-[2rem] space-y-4 hover:-translate-y-2 transition-transform duration-300">
+            <div className="w-14 h-14 rounded-2xl bg-vibrant-green/20 flex items-center justify-center text-vibrant-green mb-6">
+              <LucideUsers size={28} />
+            </div>
+            <h3 className="text-xl font-bold text-deep-black">Community First</h3>
+            <p className="text-on-surface/60 leading-relaxed">
+              We believe entertainment is inherently social. Our platform prioritizes conversations, debates, and shared moments over isolated viewing.
+            </p>
+          </div>
+          
+          <div className="glas p-8 rounded-[2rem] space-y-4 hover:-translate-y-2 transition-transform duration-300">
+            <div className="w-14 h-14 rounded-2xl bg-vibrant-green/20 flex items-center justify-center text-vibrant-green mb-6">
+              <LucideEye size={28} />
+            </div>
+            <h3 className="text-xl font-bold text-deep-black">Effortless Discovery</h3>
+            <p className="text-on-surface/60 leading-relaxed">
+              Through personalized recommendations and a creator-driven feed, finding your next obsession is organic, seamless, and fun.
+            </p>
+          </div>
+
+          <div className="glas p-8 rounded-[2rem] space-y-4 hover:-translate-y-2 transition-transform duration-300">
+            <div className="w-14 h-14 rounded-2xl bg-vibrant-green/20 flex items-center justify-center text-vibrant-green mb-6">
+              <LucideRocket size={28} />
+            </div>
+            <h3 className="text-xl font-bold text-deep-black">Seamless Tracking</h3>
+            <p className="text-on-surface/60 leading-relaxed">
+              From "Want to Watch" to "FinishD", our intuitive lists and deeplinking capabilities make managing your entertainment life a breeze.
+            </p>
+          </div>
+        </section>
+      </div>
+    </div>
+  );
+}
+
+export default AboutPage;
+
+/* --- Original src/pages/HelpPage.jsx --- */
+import React from 'react';
+import { UI_CONTENT } from '../content/ui';
+
+function HelpPage() {
+  return (
+    <div className="max-w-4xl mx-auto p-8 md:p-20 space-y-12">
+      <div className="animated-hero-banner py-16 px-8 rounded-[2rem] text-center shadow-2xl">
+        <h1 className="text-5xl font-black mb-8 tracking-tighter text-deep-black">How can we help you?</h1>
+        <div className="max-w-xl mx-auto relative">
+          <input type="text" placeholder="Search for answers..." className="w-full p-5 rounded-2xl bg-white text-deep-black border border-deep-black/10 focus:ring-4 focus:ring-vibrant-green/20 outline-none" />
+          <button className="absolute right-3 top-3 bg-vibrant-green text-deep-black px-6 py-2 rounded-xl font-bold">Search</button>
+        </div>
+      </div>
+      <div className="space-y-6">
+        <h2 className="text-3xl font-bold text-deep-black">Frequently Asked Questions</h2>
+        {UI_CONTENT.help.faqs.map(faq => (
+          <div key={faq.id} className="bg-soft-grey/20 rounded-2xl border border-deep-black/5 p-8 hover:border-vibrant-green/30 transition-colors">
+            <h3 className="text-xl font-bold text-deep-black mb-4">{faq.q}</h3>
+            <p className="text-on-surface/70 text-lg leading-relaxed">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+export default HelpPage;
+
+/* --- Original src/pages/GuidelinesPage.jsx --- */
+import React from 'react';
+import { LucideCheckCircle, LucideXCircle } from 'lucide-react';
+import { LEGAL_CONTENT } from '../content/legal';
+
+function GuidelinesPage() {
+  return (
+    <div className="max-w-4xl mx-auto p-8 md:p-20 space-y-16">
+      <div className="border-l-4 border-vibrant-green pl-8">
+        <h1 className="text-5xl font-black text-deep-black mb-4 tracking-tighter">{LEGAL_CONTENT.guidelines.title}</h1>
+        <p className="text-xl text-on-surface/70">{LEGAL_CONTENT.guidelines.subtitle}</p>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {LEGAL_CONTENT.guidelines.encouraged.map((item, i) => (
+          <div key={i} className="glass-card p-8 rounded-3xl border border-vibrant-green/20">
+            <h3 className="font-bold text-vibrant-green mb-2 flex items-center gap-2">
+              <LucideCheckCircle size={18} /> {item.title}
+            </h3>
+            <p className="text-sm text-on-surface/70">{item.text}</p>
+          </div>
+        ))}
+      </div>
+      <div className="space-y-6">
+        <h2 className="text-2xl font-bold text-deep-black">Zero Tolerance Policy</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {LEGAL_CONTENT.guidelines.prohibited.map((item, i) => (
+            <div key={i} className="p-6 rounded-2xl bg-red-500/5 border border-red-500/10 flex items-start gap-4">
+              <LucideXCircle className="text-red-400 shrink-0" size={20} />
+              <div>
+                <h4 className="font-bold text-deep-black text-sm mb-1">{item.title}</h4>
+                <p className="text-xs text-on-surface/70 leading-relaxed">{item.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default GuidelinesPage;
+
+/* --- Original src/pages/ContactPage.jsx --- */
+import React, { useState } from 'react';
+import { LucideCheckCircle, LucideAlertCircle, LucideChevronRight, LucideRefreshCcw } from 'lucide-react';
+
+function ContactPage() {
+  const [status, setStatus] = useState('idle')
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: 'Technical Support',
+    message: ''
+  })
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setStatus('loading')
+    try {
+      const response = await fetch('/functions/v1/store-deletion-request', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      })
+      if (response.ok) setStatus('success')
+      else setStatus('error')
+    } catch (error) {
+      console.error('Submission error:', error)
+      setStatus('error')
+    }
+  }
+
+  if (status === 'success') {
+    return (
+      <div role="status" aria-live="polite" className="max-w-3xl mx-auto text-center py-20 space-y-6">
+        <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-vibrant-green/20 text-vibrant-green mb-4">
+          <LucideCheckCircle size={48} aria-hidden="true" />
+        </div>
+        <h2 className="text-4xl font-bold text-deep-black">Message Sent!</h2>
+        <p className="text-on-surface/70 text-lg">Thank you for reaching out. Our team will get back to you within 24 hours.</p>
+        <button onClick={() => setStatus('idle')} className="text-vibrant-green font-bold hover:underline">Send another message</button>
+      </div>
+    )
+  }
+
+  return (
+    <div className="max-w-3xl mx-auto p-8 md:p-20 space-y-12">
+      <div className="text-center">
+        <h1 className="text-5xl font-black text-deep-black mb-4 tracking-tighter">Get in Touch</h1>
+        <p className="text-xl text-on-surface/60">Our team typically responds within 24 hours.</p>
+      </div>
+      <form onSubmit={handleSubmit} className="space-y-8 glas p-8 md:p-12 rounded-[3rem]">
+        {status === 'error' && (
+          <div role="alert" className="p-4 bg-red-500/10 border border-red-500/20 rounded-2xl flex items-center gap-3 text-red-400">
+            <LucideAlertCircle size={20} />
+            <p className="text-sm font-bold">Something went wrong. Please try again later.</p>
+          </div>
+        )}
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="space-y-2">
+            <label className="text-xs font-bold text-deep-black/40 uppercase tracking-widest ml-1">Full Name</label>
+            <input type="text" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} className="w-full p-4 bg-soft-grey/20 border border-deep-black/10 rounded-2xl focus:ring-2 focus:ring-vibrant-green outline-none text-deep-black" required />
+          </div>
+          <div className="space-y-2">
+            <label className="text-xs font-bold text-deep-black/40 uppercase tracking-widest ml-1">Email Address</label>
+            <input type="email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="w-full p-4 bg-soft-grey/20 border border-deep-black/10 rounded-2xl focus:ring-2 focus:ring-vibrant-green outline-none text-deep-black" required />
+          </div>
+        </div>
+        <div className="space-y-2">
+          <label htmlFor="subject" className="text-xs font-bold text-deep-black/40 uppercase tracking-widest ml-1">Subject</label>
+          <div className="relative">
+            <select value={formData.subject} onChange={(e) => setFormData({...formData, subject: e.target.value})} className="w-full p-4 bg-soft-grey/20 border border-deep-black/10 rounded-2xl focus:ring-2 focus:ring-vibrant-green outline-none text-deep-black appearance-none">
+              <option>Account Recovery</option>
+              <option>Technical Support</option>
+              <option>Feature Request</option>
+              <option>Request deletion of my account</option>
+            </select>
+            <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none opacity-40"><LucideChevronRight size={18} className="rotate-90" /></div>
+          </div>
+        </div>
+        <div className="space-y-2">
+          <label className="text-xs font-bold text-deep-black/40 uppercase tracking-widest ml-1">Message</label>
+          <textarea rows="5" value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} className="w-full p-4 bg-soft-grey/20 border border-deep-black/10 rounded-2xl focus:ring-2 focus:ring-vibrant-green outline-none text-deep-black" placeholder="Tell us what's going on..." required></textarea>
+        </div>
+        <button type="submit" disabled={status === 'loading'} className="w-full bg-deep-black text-white font-black py-5 rounded-2xl hover:opacity-90 transition-all text-lg uppercase tracking-widest disabled:opacity-50 disabled:cursor-not-allowed flex justify-center items-center gap-3">
+          {status === 'loading' ? <><LucideRefreshCcw className="animate-spin" size={20} />Sending...</> : 'Send Message'}
+        </button>
+      </form>
+    </div>
+  )
+}
+
+export default ContactPage;
+
+/* --- Original src/pages/LegalPage.jsx --- */
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { LucideShieldCheck } from 'lucide-react';
+import { LEGAL_CONTENT } from '../content/legal';
+
+function LegalPage({ type }) {
+  const content = LEGAL_CONTENT[type]
+  const navigate = useNavigate()
+
+  if (!content) return <div className="p-20 text-center text-deep-black">Document Not Found</div>
+
+  return (
+    <div className="max-w-4xl mx-auto p-8 md:p-20 space-y-16">
+      <div>
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-vibrant-green/10 border border-vibrant-green/20 text-vibrant-green text-xs font-bold mb-6">
+          <LucideShieldCheck size={14} />
+          OFFICIAL POLICY
+        </div>
+        <h1 className="text-6xl font-black text-deep-black mb-4 tracking-tighter">
+          {content.title}
+        </h1>
+        <p className="text-on-surface/60">Last Updated: {content.lastUpdated}</p>
+      </div>
+
+      {content.atAGlance && (
+        <div className="grid md:grid-cols-3 gap-6">
+          {content.atAGlance.map((text, i) => (
+            <div key={i} className="p-6 rounded-3xl bg-vibrant-green/5 border border-vibrant-green/10">
+              <p className="text-sm text-on-surface/70 leading-relaxed">
+                <span className="text-vibrant-green font-bold mr-2">•</span>
+                {text}
+              </p>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {content.introduction && (
+        <div className="p-8 rounded-3xl bg-deep-black/5 border border-deep-black/10">
+          <p className="text-on-surface/70 text-lg leading-relaxed whitespace-pre-wrap italic">
+            {content.introduction}
+          </p>
+        </div>
+      )}
+
+      <div className="space-y-12">
+        {content.sections.map((section, i) => (
+          <section key={i} className="space-y-4">
+            <h2 className="text-2xl font-bold text-deep-black flex items-center gap-3">
+              <span className="w-10 h-10 rounded-lg bg-deep-black/5 flex items-center justify-center text-sm font-mono text-vibrant-green border border-deep-black/10">
+                {i + 1}
+              </span>
+              {section.title}
+            </h2>
+            <div className="pl-11">
+              <p className="text-on-surface/70 text-lg leading-relaxed whitespace-pre-wrap">
+                {section.content}
+              </p>
+            </div>
+          </section>
+        ))}
+      </div>
+
+      <div className="p-12 rounded-[3rem] bg-gradient-to-br from-vibrant-green/10 to-transparent border border-vibrant-green/20 text-center">
+        <h3 className="text-2xl font-bold text-deep-black mb-2">Have questions?</h3>
+        <p className="text-on-surface/70 mb-8">We're here to help you understand your rights and our responsibilities.</p>
+        <button 
+          onClick={() => navigate('/contact')}
+          className="bg-deep-black text-white px-8 py-3 rounded-2xl font-bold hover:scale-105 transition-all"
+        >
+          Contact Legal Team
+        </button>
+      </div>
+    </div>
+  )
+}
+
+export default LegalPage;
+

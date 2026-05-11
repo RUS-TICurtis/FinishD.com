@@ -2,9 +2,11 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
+import AboutPage from './pages/AboutPage';
 import HelpPage from './pages/HelpPage';
 import GuidelinesPage from './pages/GuidelinesPage';
-import LegalPage from './pages/LegalPage';
+import TermsPage from './pages/TermsPage';
+import PrivacyPage from './pages/PrivacyPage';
 import ContactPage from './pages/ContactPage';
 import DeepLinkRedirect from './pages/DeepLinkRedirect';
 
@@ -13,10 +15,11 @@ function App() {
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="/help" element={<HelpPage />} />
         <Route path="/guidelines" element={<GuidelinesPage />} />
-        <Route path="/privacy" element={<LegalPage type="privacy" />} />
-        <Route path="/terms" element={<LegalPage type="terms" />} />
+        <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/terms" element={<TermsPage />} />
         <Route path="/contact" element={<ContactPage />} />
         
         {/* Deep Link Fallback Routes */}

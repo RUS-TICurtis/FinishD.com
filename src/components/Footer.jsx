@@ -11,6 +11,7 @@ function Footer() {
           <p className="text-sm text-white/40">© 2026 FinishD. All rights reserved.</p>
         </div>
         <div className="flex flex-wrap justify-center gap-8">
+          <Link to="/about" className="text-sm text-white/40 hover:text-vibrant-green transition-colors">About</Link>
           <Link to="/privacy" className="text-sm text-white/40 hover:text-vibrant-green transition-colors">Privacy</Link>
           <Link to="/terms" className="text-sm text-white/40 hover:text-vibrant-green transition-colors">Terms of Use</Link>
           <Link to="/guidelines" className="text-sm text-white/40 hover:text-vibrant-green transition-colors">Guidelines</Link>

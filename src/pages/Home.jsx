@@ -116,9 +116,30 @@ function Home() {
 
             {!waitlistSubmitted ? (
               <form
-                onSubmit={(e) => {
+                onSubmit={async (e) => {
                   e.preventDefault();
-                  setWaitlistSubmitted(true);
+                  if (!waitlistEmail) return;
+                  
+                  // TODO: Replace this URL with your Google Apps Script Web App URL
+                  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzphIQm2S45BKKsxjYaUgVwqNMbm-p0smnAChvx0mSFbvUDwvMswt7bBKiudGCdOvrP/exec';
+                  
+                  try {
+                    // We use no-cors or form-urlencoded depending on the Apps Script setup
+                    // The standard way for Google Apps Script doPost is typically form data
+                    const formData = new FormData();
+                    formData.append('email', waitlistEmail);
+
+                    await fetch(GOOGLE_SCRIPT_URL, {
+                      method: 'POST',
+                      body: formData,
+                      mode: 'no-cors' // Use no-cors to avoid CORS issues with basic setup
+                    });
+                    
+                    setWaitlistSubmitted(true);
+                  } catch (error) {
+                    console.error("Error submitting to waitlist:", error);
+                    alert("There was an error joining the waitlist. Please try again.");
+                  }
                 }}
                 className="flex flex-col sm:flex-row justify-center gap-4 max-w-lg mx-auto"
               >

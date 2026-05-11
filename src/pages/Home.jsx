@@ -55,13 +55,15 @@ function Home() {
             
             <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 py-4 px-4 w-full [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
               {[
+                "/trailers.jpg",
+                "/trailers2.jpg",
+                "/creator.jpg",
                 "/photo1.jpg", 
-                "/creator.jpg", 
+                 
                 "/Community-screen.jpg", 
                 "/convos.jpg", 
                 "/profile.jpg", 
-                "/recs.jpg", 
-                "/trailers.jpg"
+                "/recs.jpg"
               ].map((src, i) => (
                 <div key={i} className="shrink-0 snap-center relative w-[280px] md:w-[310px] h-[590px] md:h-[650px] rounded-[3rem] border-[8px] border-soft-grey shadow-2xl overflow-hidden bg-black ring-1 ring-white/20 transition-transform duration-300 hover:scale-[1.02]">
                   <img 
@@ -92,8 +94,8 @@ function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               { title: "Dune: Part Two", tag: "Now in Theaters", img: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=2925&auto=format&fit=crop" },
-              { title: "The Bear: Season 3", tag: "Coming Soon", img: "https://images.unsplash.com/photo-1558223635-b2fbdf522308?q=80&w=2864&auto=format&fit=crop" },
-              { title: "Deadpool & Wolverine", tag: "Summer 2024", img: "https:///deadpoolwolverine.jpg" }
+              { title: "Spider-Man: Brand New Day", tag: "Coming Soon", img: "https://images.unsplash.com/photo-1558223635-b2fbdf522308?q=80&w=2864&auto=format&fit=crop" },
+              { title: "Deadpool & Wolverine", tag: "Summer 2024", img: "/deadpoolnwolverine.png" }
             ].map((card, i) => (
               <div key={i} className="group relative aspect-[16/10] rounded-2xl overflow-hidden glass-card ring-1 ring-deep-black/5 hover:ring-vibrant-green/50 transition-all duration-500">
                 <img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src={card.img} alt={card.title} />

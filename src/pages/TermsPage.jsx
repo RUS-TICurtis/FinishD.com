@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { LucideShieldCheck } from 'lucide-react';
 
 function TermsPage() {
   return (
@@ -12,9 +13,10 @@ function TermsPage() {
         
         {/* 1. Hero / Document Header */}
         <header className="mb-16">
-          <p className="text-vibrant-green font-bold tracking-widest text-sm uppercase mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-vibrant-green/10 border border-vibrant-green/20 text-vibrant-green text-xs font-bold mb-6">
+            <LucideShieldCheck size={14} />
             OFFICIAL POLICY
-          </p>
+          </div>
           <h1 className="text-5xl md:text-6xl font-black text-white tracking-tighter mb-6">
             Terms of Use
           </h1>
@@ -109,7 +111,7 @@ function TermsPage() {
               FinishD is committed to maintaining a safe community. We employ automated systems and human review to moderate content.
             </p>
             <ul className="list-disc list-outside ml-6 space-y-2 text-white/70">
-              <li><strong className="text-white">Reporting:</strong> You can report content (including creator videos, chat messages, and community posts) or users that you believe violate these Terms or our Community Guidelines using the in-app reporting tools.</li>
+              <li><strong className="text-white">Reporting:</strong> You can report content (including creator videos, chat messages, and community posts) or users that you believe violate these Terms or our <Link to="/guidelines" className="text-vibrant-green hover:underline underline-offset-4">Community Guidelines</Link> using the in-app reporting tools.</li>
               <li><strong className="text-white">Enforcement Actions:</strong> We reserve the right to review, remove, or suppress User Content at our sole discretion. We may take enforcement actions against your account, including issuing warnings, temporary suspensions, or permanent bans, for violations of these Terms.</li>
               <li><strong className="text-white">Appeals:</strong> If your account is suspended or banned, you may have the opportunity to submit an appeal through the Service.</li>
             </ul>
@@ -146,7 +148,7 @@ function TermsPage() {
               Privacy & Data Usage
             </h2>
             <p className="text-white/70 leading-relaxed mb-4">
-              Your privacy is important to us. Please review our Privacy Policy, which explains how we collect, use, and share your personal information.
+              Your privacy is important to us. Please review our <Link to="/privacy" className="text-vibrant-green hover:underline underline-offset-4">Privacy Policy</Link>, which explains how we collect, use, and share your personal information.
             </p>
           </section>
 

@@ -79,7 +79,7 @@ function Home() {
           
           <div className="relative flex justify-center lg:justify-end mt-12 lg:mt-0">
             {/* Hero Mockup */}
-            <div className="relative w-[320px] md:w-[380px] h-[680px] md:h-[780px] rounded-[3.5rem] border-[10px] border-soft-grey shadow-2xl overflow-hidden bg-black ring-1 ring-white/20 transform lg:rotate-[-2deg] transition-transform hover:rotate-0 duration-700">
+            <div className="relative w-[320px] md:w-[380px] h-[680px] md:h-[780px] rounded-[3.5rem] border-[10px] border-soft-grey shadow-2xl overflow-hidden bg-black ring-1 ring-white/20 transform  transition-transform hover:rotate-0 duration-700">
               <img 
                 className="w-full h-full object-cover" 
                 src="/discover.jpg"
@@ -88,14 +88,14 @@ function Home() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
               
               {/* Floating UI Cards */}
-              <div className="absolute bottom-32 left-[-20px] glass-card px-4 py-3 rounded-2xl flex items-center gap-3 shadow-xl animate-[bounce_3s_infinite]">
+              {/* <div className="absolute bottom-32 left-[-20px] glass-card px-4 py-3 rounded-2xl flex items-center gap-3 shadow-xl animate-[bounce_3s_infinite]">
                 <div className="w-8 h-8 rounded-full bg-vibrant-green text-deep-black flex items-center justify-center font-bold text-xs">98%</div>
                 <span className="font-bold text-deep-black text-sm">Match</span>
               </div>
               <div className="absolute top-40 right-[-10px] glass-card px-4 py-3 rounded-2xl flex items-center gap-3 shadow-xl animate-[bounce_3s_infinite_1s]">
                 <LucideCheckCircle className="text-vibrant-green" size={20} />
                 <span className="font-bold text-deep-black text-sm">Added to Watchlist</span>
-              </div>
+              </div> */}
             </div>
             <div className="absolute -top-20 -right-20 w-64 h-64 bg-vibrant-green/20 blur-[120px] rounded-full pointer-events-none"></div>
             <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-vibrant-green/10 blur-[120px] rounded-full pointer-events-none"></div>

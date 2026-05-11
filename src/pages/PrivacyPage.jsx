@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, LucideShieldCheck } from 'lucide-react';
 
 function PrivacyPage() {
   return (
@@ -13,9 +13,10 @@ function PrivacyPage() {
         
         {/* 1. Hero / Document Header */}
         <header className="mb-8">
-          <p className="text-vibrant-green font-bold tracking-widest text-sm uppercase mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-vibrant-green/10 border border-vibrant-green/20 text-vibrant-green text-xs font-bold mb-6">
+            <LucideShieldCheck size={14} />
             OFFICIAL POLICY
-          </p>
+          </div>
           <h1 className="text-5xl md:text-6xl font-black text-white tracking-tighter mb-6">
             Privacy Policy
           </h1>
@@ -103,7 +104,7 @@ function PrivacyPage() {
               <li><strong className="text-white">App Functionality:</strong> To authenticate your identity, enable messaging, and provide tracking tools for your movie/TV show library.</li>
               <li><strong className="text-white">Product Personalization:</strong> To generate your "For You" feed and suggest content you might enjoy.</li>
               <li><strong className="text-white">Analytics:</strong> To understand app performance and fix technical issues.</li>
-              <li><strong className="text-white">Safety & Moderation:</strong> We use automated tools (including AI-driven moderation) to review content for violations of our Community Guidelines.</li>
+              <li><strong className="text-white">Safety & Moderation:</strong> We use automated tools (including AI-driven moderation) to review content for violations of our <Link to="/guidelines" className="text-vibrant-green hover:underline underline-offset-4">Community Guidelines</Link>.</li>
             </ul>
           </section>
 

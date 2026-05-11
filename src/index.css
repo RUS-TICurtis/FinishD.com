@@ -18,6 +18,21 @@ body {
 .text-black{
   color: black;
 }
+.space-y-8{
+  padding:15px;
+  padding-left: 30px;
+}
+
+.text-sm{
+  font-size: 25px;
+}
+
+.glas{
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgb(from #2dd60e r g b );
+  box-shadow: 0 8px 32px 0 rgba(11, 11, 15, 0.05);
+}
 
 .glass-card {
   background: rgba(255, 255, 255, 0.4);
@@ -72,3 +87,8 @@ body {
 .logo-image-footer:hover {
   opacity: 1;
 }
+
+@media (max-width: 768px) {
+   
+    
+  }

@@ -46,7 +46,7 @@ function ContactPage() {
         <h1 className="text-5xl font-black text-deep-black mb-4 tracking-tighter">Get in Touch</h1>
         <p className="text-xl text-on-surface/60">Our team typically responds within 24 hours.</p>
       </div>
-      <form onSubmit={handleSubmit} className="space-y-8 glass-card p-8 md:p-12 rounded-[3rem]">
+      <form onSubmit={handleSubmit} className="space-y-8 glas p-8 md:p-12 rounded-[3rem]">
         {status === 'error' && (
           <div role="alert" className="p-4 bg-red-500/10 border border-red-500/20 rounded-2xl flex items-center gap-3 text-red-400">
             <LucideAlertCircle size={20} />

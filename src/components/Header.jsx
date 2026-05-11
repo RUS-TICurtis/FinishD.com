@@ -32,7 +32,9 @@ function Header() {
           <Link to="/guidelines" className={`font-bold transition-colors ${navLinkClass('/guidelines')}`}>Guidelines</Link>
           <Link to="/contact" className={`font-bold transition-colors ${navLinkClass('/contact')}`}>Contact Us</Link>
         </nav>
+        <a href="#">
         <button className="bg-vibrant-green text-deep-black px-6 py-2 rounded-full font-bold hover:scale-105 transition-all focus-visible:ring-2 focus-visible:ring-vibrant-green outline-none">Get App</button>
+        </a>
       </div>
     </header>
   )

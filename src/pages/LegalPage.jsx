@@ -47,7 +47,7 @@ function LegalPage({ type }) {
         {content.sections.map((section, i) => (
           <section key={i} className="space-y-4">
             <h2 className="text-2xl font-bold text-deep-black flex items-center gap-3">
-              <span className="w-8 h-8 rounded-lg bg-deep-black/5 flex items-center justify-center text-sm font-mono text-vibrant-green border border-deep-black/10">
+              <span className="w-10 h-10 rounded-lg bg-deep-black/5 flex items-center justify-center text-sm font-mono text-vibrant-green border border-deep-black/10">
                 {i + 1}
               </span>
               {section.title}

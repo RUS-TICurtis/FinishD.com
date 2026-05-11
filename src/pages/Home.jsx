@@ -93,8 +93,8 @@ function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { title: "Dune: Part Two", tag: "Now in Theaters", img: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=2925&auto=format&fit=crop" },
-              { title: "Spider-Man: Brand New Day", tag: "Coming Soon", img: "https://images.unsplash.com/photo-1558223635-b2fbdf522308?q=80&w=2864&auto=format&fit=crop" },
+              { title: "Dune: Part Two", tag: "Now in Theaters", img: "/dune2.png" },
+              { title: "Spider-Man: Brand New Day", tag: "Coming Soon", img: "/spiderman-brandnew.png" },
               { title: "Deadpool & Wolverine", tag: "Summer 2024", img: "/deadpoolnwolverine.png" }
             ].map((card, i) => (
               <div key={i} className="group relative aspect-[16/10] rounded-2xl overflow-hidden glass-card ring-1 ring-deep-black/5 hover:ring-vibrant-green/50 transition-all duration-500">

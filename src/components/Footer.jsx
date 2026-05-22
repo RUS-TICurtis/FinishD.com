@@ -7,7 +7,7 @@ function Footer() {
     <footer className="w-full border-t border-white/10 pt-16 pb-8 bg-black mt-20">
       <div className="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-8">
         <div className="flex flex-col gap-4">
-          <img src="/Finishdlogo.png" alt="FinishD" className="logo-image-footer" />
+          <img src="/Finishd logo (lower case png) white.png" alt="FinishD" className="logo-image-footer" />
           <p className="text-sm text-white/40">© 2026 FinishD. All rights reserved.</p>
         </div>
         <div className="flex flex-wrap justify-center gap-8">

@@ -1,5 +1,82 @@
 import React from 'react';
-import { LucideZap, LucideUsers, LucideShieldCheck } from 'lucide-react';
+import { LucideRocket, LucideUsers, LucideEye, LucideShieldCheck, LucideZap } from 'lucide-react';
+/** 
+function AboutPage() {
+  return (
+    <div className="pt-32 pb-24 px-8 min-h-screen">
+      <div className="max-w-[1000px] mx-auto space-y-24">
+        {/* Header Section }
+        <section className="text-center space-y-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-vibrant-green/10 border border-vibrant-green/20 text-vibrant-green text-sm font-bold uppercase tracking-widest">
+            Our Mission
+          </div>
+          <h1 className="text-5xl md:text-7xl font-black text-deep-black tracking-tighter">
+            Redefining the <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-vibrant-green to-vibrant-green/60">Social Entertainment</span> Experience
+          </h1>
+          <p className="text-xl text-on-surface/70 max-w-2xl mx-auto leading-relaxed">
+            FinishD was born out of a simple frustration: discovering, discussing, and tracking what to watch shouldn't be a solitary, fragmented experience. We're bringing the global conversation back to the content itself.
+          </p>
+        </section>
+
+        {/* Story Section *}
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-soft-grey/30 p-8 md:p-16 rounded-[3rem] border border-deep-black/5 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-vibrant-green/10 blur-[100px] rounded-full"></div>
+          <div className="space-y-6 relative z-10">
+            <h2 className="text-3xl font-bold text-deep-black">The Story of FinishD</h2>
+            <p className="text-lg text-on-surface/70 leading-relaxed">
+              We noticed that while streaming services offered endless catalogs, they lacked the community feel of the theater lobby or the water cooler. You'd watch a mind-bending finale, but had nowhere to instantly share your theories.
+            </p>
+            <p className="text-lg text-on-surface/70 leading-relaxed">
+              FinishD was created to bridge this gap. By combining a dynamic creator feed with comprehensive watchlists and seamless deeplinking, we're building the ultimate hub for movie buffs and TV series bingers to unite.
+            </p>
+          </div>
+          <div className="relative h-[400px] rounded-[2rem] overflow-hidden shadow-2xl">
+            <img src="/photo1.jpg" alt="FinishD App Experience" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-black/60 to-transparent"></div>
+          </div>
+        </section>
+
+        {/* Vision Grid *}
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="glas p-8 rounded-[2rem] space-y-4 hover:-translate-y-2 transition-transform duration-300">
+            <div className="w-14 h-14 rounded-2xl bg-vibrant-green/20 flex items-center justify-center text-vibrant-green mb-6">
+              <LucideUsers size={28} />
+            </div>
+            <h3 className="text-xl font-bold text-deep-black">Community First</h3>
+            <p className="text-on-surface/60 leading-relaxed">
+              We believe entertainment is inherently social. Our platform prioritizes conversations, debates, and shared moments over isolated viewing.
+            </p>
+          </div>
+          
+          <div className="glas p-8 rounded-[2rem] space-y-4 hover:-translate-y-2 transition-transform duration-300">
+            <div className="w-14 h-14 rounded-2xl bg-vibrant-green/20 flex items-center justify-center text-vibrant-green mb-6">
+              <LucideEye size={28} />
+            </div>
+            <h3 className="text-xl font-bold text-deep-black">Effortless Discovery</h3>
+            <p className="text-on-surface/60 leading-relaxed">
+              Through personalized recommendations and a creator-driven feed, finding your next obsession is organic, seamless, and fun.
+            </p>
+          </div>
+
+          <div className="glas p-8 rounded-[2rem] space-y-4 hover:-translate-y-2 transition-transform duration-300">
+            <div className="w-14 h-14 rounded-2xl bg-vibrant-green/20 flex items-center justify-center text-vibrant-green mb-6">
+              <LucideRocket size={28} />
+            </div>
+            <h3 className="text-xl font-bold text-deep-black">Seamless Tracking</h3>
+            <p className="text-on-surface/60 leading-relaxed">
+              From "Want to Watch" to "FinishD", our intuitive lists and deeplinking capabilities make managing your entertainment life a breeze.
+            </p>
+          </div>
+        </section>
+      </div>
+    </div>
+  
+**/
+
+
+
+
 
 function AboutPage() {
   return (
@@ -9,7 +86,7 @@ function AboutPage() {
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-vibrant-green/5 blur-[120px] rounded-full pointer-events-none"></div>
 
       <div className="max-w-[1440px] mx-auto space-y-32 relative z-10">
-        
+
         {/* 1. Hero Section (The Hook) */}
         <section className="text-center space-y-8 max-w-5xl mx-auto pt-10">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter leading-tight transition-opacity duration-700 animate-fade-in">
@@ -18,14 +95,14 @@ function AboutPage() {
           <p className="text-xl md:text-2xl text-white/70 max-w-3xl mx-auto leading-relaxed transition-opacity duration-700 delay-100 animate-fade-in-up">
             We believe finding a great movie shouldn't be harder than actually watching one.
           </p>
-          
+
           {/* Abstract Brand Hero Graphic Placeholder */}
           <div className="relative h-[300px] md:h-[400px] w-full rounded-[3rem] overflow-hidden mt-12 border border-white/10 shadow-2xl transition-opacity duration-700 delay-200">
-             <div className="w-full h-full bg-black flex items-center justify-center relative">
-                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/noise-lines.png')] opacity-20 mix-blend-overlay"></div>
-                <div className="w-[120%] h-1 bg-vibrant-green shadow-[0_0_30px_rgba(45,214,14,1)] rounded-full transform -rotate-6"></div>
-             </div>
-             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+            <div className="w-full h-full bg-black flex items-center justify-center relative">
+              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/noise-lines.png')] opacity-20 mix-blend-overlay"></div>
+              <div className="w-[120%] h-1 bg-vibrant-green shadow-[0_0_30px_rgba(45,214,14,1)] rounded-full transform -rotate-6"></div>
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
           </div>
         </section>
 
@@ -42,9 +119,9 @@ function AboutPage() {
             </p>
           </div>
           <div className="relative h-[400px] md:h-[500px] rounded-[3rem] overflow-hidden border border-white/10 bg-white/5 backdrop-blur-lg flex items-center justify-center p-8 group hover:border-white/20 transition-colors duration-500">
-             {/* App Ecosystem Graphic Placeholder */}
-             <img src="/Community-screen.jpg" alt="App Ecosystem Graphic" className="w-full h-full object-cover rounded-[2rem] opacity-60 group-hover:scale-105 transition-transform duration-700" />
-             <div className="absolute inset-0 bg-gradient-to-tr from-black/90 via-black/40 to-transparent pointer-events-none"></div>
+            {/* App Ecosystem Graphic Placeholder */}
+            <img src="/Community-screen.jpg" alt="App Ecosystem Graphic" className="w-full h-full object-cover rounded-[2rem] opacity-60 group-hover:scale-105 transition-transform duration-700" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-black/90 via-black/40 to-transparent pointer-events-none"></div>
           </div>
         </section>
 
@@ -104,10 +181,10 @@ function AboutPage() {
               <div className="absolute inset-0 bg-black/50"></div>
               <img src="/recs.jpg" alt="Deep-linking Interactive UI Mockup" className="absolute inset-0 w-full h-full object-cover opacity-40 hover:opacity-60 transition-opacity duration-700" />
               <div className="relative z-10 transform hover:scale-105 transition-transform duration-300">
-                 <button className="bg-vibrant-green text-deep-black font-black px-8 py-4 text-lg rounded-full shadow-[0_0_40px_rgba(45,214,14,0.3)] flex items-center gap-3">
-                   Watch on Max
-                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                 </button>
+                <button className="bg-vibrant-green text-deep-black font-black px-8 py-4 text-lg rounded-full shadow-[0_0_40px_rgba(45,214,14,0.3)] flex items-center gap-3">
+                  Watch on Max
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+                </button>
               </div>
             </div>
           </div>
@@ -121,8 +198,8 @@ function AboutPage() {
               <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter">Ready to finish your search?</h2>
               <p className="text-xl text-white/70">Join thousands of movie lovers waiting for early access.</p>
               <div className="pt-8">
-                <a 
-                  href="/#waitlist" 
+                <a
+                  href="/#waitlist"
                   className="inline-block bg-vibrant-green text-deep-black font-black px-10 py-5 rounded-full hover:scale-105 transition-all shadow-[0_0_40px_rgba(45,214,14,0.3)] hover:shadow-[0_0_60px_rgba(45,214,14,0.5)] text-lg"
                 >
                   Join the Beta Waitlist
@@ -131,7 +208,7 @@ function AboutPage() {
             </div>
           </div>
         </section>
-        
+
       </div>
     </div>
   );

@@ -79,7 +79,7 @@ function Home() {
           
           <div className="relative flex justify-center lg:justify-end mt-12 lg:mt-0">
             {/* Hero Mockup */}
-            <div className="relative w-[320px] md:w-[380px] h-[680px] md:h-[780px] rounded-[3.5rem] border-[10px] border-soft-grey shadow-2xl overflow-hidden bg-black ring-1 ring-white/20 transform  transition-transform hover:rotate-0 duration-700">
+            <div className="relative w-[320px] md:w-[380px] h-[680px] md:h-[800px] rounded-[3.5rem] border-[10px] border-soft-grey shadow-2xl overflow-hidden bg-black ring-1 ring-white/20 transform  transition-transform hover:rotate-0 duration-700">
               <img 
                 className="w-full h-full object-cover" 
                 src="/discover.jpg"
@@ -118,7 +118,7 @@ function Home() {
                   <LucideVideo size={32} />
                 </div>
               </div>
-              <div className="relative h-[400px] -mx-12 -mb-12 mt-auto rounded-t-[3rem] overflow-hidden translate-y-8 group-hover:translate-y-4 transition-transform duration-500 shadow-[0_-20px_40px_rgba(0,0,0,0.1)]">
+              <div className="relative h-[823px] -mx-12 -mb-12 mt-auto rounded-t-[3rem] overflow-hidden translate-y-8 group-hover:translate-y-4 transition-transform duration-500 shadow-[0_-20px_40px_rgba(0,0,0,0.1)]">
                 <img src="/trailers.jpg" alt="Trailer Feed" className="w-full h-full object-cover object-top" />
               </div>
             </div>
@@ -127,14 +127,14 @@ function Home() {
             <div className="glas p-8 md:p-12 rounded-[3rem] border border-white/40 flex flex-col justify-between overflow-hidden relative group bg-white/40 hover:bg-white/60 transition-colors duration-300">
               <div className="space-y-4 relative z-10 mb-12">
                 <p className="text-vibrant-green font-bold uppercase tracking-widest text-sm">Total Organization</p>
-                <h2 className="text-4xl md:text-5xl font-black text-deep-black">Track every frame.</h2>
+                <h2 className="text-4xl md:text-5xl font-black text-deep-black">Track every name.</h2>
                 <p className="text-lg text-on-surface/70 leading-relaxed max-w-md">Keep your entertainment life beautifully organized. Manage your Watchlist, update what you're currently Watching, and celebrate what you've FinishD.</p>
                 <div className="w-16 h-16 rounded-2xl bg-vibrant-green/20 flex items-center justify-center text-vibrant-green mt-6">
                   <LucideListChecks size={32} />
                 </div>
               </div>
-              <div className="relative h-[400px] -mx-12 -mb-12 mt-auto rounded-t-[3rem] overflow-hidden translate-y-8 group-hover:translate-y-4 transition-transform duration-500 shadow-[0_-20px_40px_rgba(0,0,0,0.1)]">
-                <img src="/profile.jpg" alt="Watchlist Tracking" className="w-full h-full object-cover object-top" />
+              <div className="relative h-[823px] -mx-12 -mb-12 mt-auto rounded-t-[3rem] overflow-hidden translate-y-8 group-hover:translate-y-4 transition-transform duration-500 shadow-[0_-20px_40px_rgba(0,0,0,0.1)]">
+                <img src="/profile2.jpg" alt="Watchlist Tracking" className="w-full h-full object-cover object-top" />
               </div>
             </div>
 
@@ -148,8 +148,8 @@ function Home() {
                   <LucideMessageSquare size={32} />
                 </div>
               </div>
-              <div className="relative h-[400px] -mx-12 -mb-12 mt-auto rounded-t-[3rem] overflow-hidden translate-y-8 group-hover:translate-y-4 transition-transform duration-500 shadow-[0_-20px_40px_rgba(0,0,0,0.1)]">
-                <img src="/convos.jpg" alt="Community Chat" className="w-full h-full object-cover object-top" />
+              <div className="relative h-[823px] -mx-12 -mb-12 mt-auto rounded-t-[3rem] overflow-hidden translate-y-8 group-hover:translate-y-4 transition-transform duration-500 shadow-[0_-20px_40px_rgba(0,0,0,0.1)]">
+                <img src="/Community-screen.jpg" alt="Community Chat" className="w-full h-full object-cover object-top" />
               </div>
             </div>
 
@@ -163,8 +163,8 @@ function Home() {
                   <LucideExternalLink size={32} />
                 </div>
               </div>
-              <div className="relative h-[400px] -mx-12 -mb-12 mt-auto rounded-t-[3rem] overflow-hidden translate-y-8 group-hover:translate-y-4 transition-transform duration-500 shadow-[0_-20px_40px_rgba(0,0,0,0.1)]">
-                <img src="/recs.jpg" alt="Deeplinking and Recs" className="w-full h-full object-cover object-top" />
+              <div className="relative h-[823px] -mx-12 -mb-12 mt-auto rounded-t-[3rem] overflow-hidden translate-y-8 group-hover:translate-y-4 transition-transform duration-500 shadow-[0_-20px_40px_rgba(0,0,0,0.1)]">
+                <img src="/discover.jpg" alt="Deeplinking and Recs" className="w-full h-full object-cover object-top" />
               </div>
             </div>
             

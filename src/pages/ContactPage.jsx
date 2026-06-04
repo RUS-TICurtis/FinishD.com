@@ -21,10 +21,36 @@ function ContactPage() {
     e.preventDefault();
     setStatus('loading');
     
-    // Simulate API call delay
-    setTimeout(() => {
-      setStatus('success');
-    }, 1500);
+    const SUPABASE_URL = 'https://lihaddxlyychswpkswbp.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpaGFkZHhseXljaHN3cGtzd2JwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkzNDA5MzQsImV4cCI6MjA4NDkxNjkzNH0.DrBUuz2ayMRCIicYAFNqH2ws3gbRu8ycsbATF54BuFM';
+    
+    try {
+      const response = await fetch(`${SUPABASE_URL}/functions/v1/store-deletion-request`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_ANON_KEY,
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.category,
+          message: formData.message
+        })
+      });
+      
+      if (response.ok) {
+        setStatus('success');
+      } else {
+        const errData = await response.json();
+        throw new Error(errData.error || 'Failed to submit request');
+      }
+    } catch (error) {
+      console.error("Error submitting contact form:", error);
+      alert("There was an error sending your message. Please try again.");
+      setStatus('idle');
+    }
   };
 
   return (

@@ -35,15 +35,38 @@ app.use(limiter);
 app.use(express.json());
 
 // Handle deletion request submissions
-app.post('/functions/v1/store-deletion-request', (req, res) => {
+app.post('/functions/v1/store-deletion-request', async (req, res) => {
     const { name, email, subject, message } = req.body;
     console.log('New Deletion Request Received:', { name, email, subject, message });
     
-    // Simulate successful storage
-    res.status(200).json({ 
-        success: true, 
-        message: 'Your request has been received and will be processed by our legal team.' 
-    });
+    const SUPABASE_URL = 'https://lihaddxlyychswpkswbp.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpaGFkZHhseXljaHN3cGtzd2JwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkzNDA5MzQsImV4cCI6MjA4NDkxNjkzNH0.DrBUuz2ayMRCIicYAFNqH2ws3gbRu8ycsbATF54BuFM';
+
+    try {
+      // Forward the request to the remote Supabase Edge Function
+      const response = await fetch(`${SUPABASE_URL}/functions/v1/store-deletion-request`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_ANON_KEY,
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+        },
+        body: JSON.stringify({ name, email, subject, message })
+      });
+      
+      const data = await response.json();
+      if (response.ok) {
+        res.status(200).json({ 
+            success: true, 
+            message: 'Your request has been received and will be processed by our legal team.' 
+        });
+      } else {
+        res.status(response.status).json({ success: false, error: data.error || 'Failed to store request' });
+      }
+    } catch (error) {
+      console.error('Error forwarding deletion request to Supabase:', error);
+      res.status(500).json({ success: false, error: 'Internal Server Error' });
+    }
 });
 
 // Serve static portal files - Handled by Vite/Vercel in production

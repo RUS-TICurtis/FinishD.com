@@ -239,29 +239,38 @@ function Home() {
           <div className="relative z-10 space-y-8">
             <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter">Be the first to FinishD.</h2>
             <p className="text-white/80 text-xl max-w-2xl mx-auto">Sign up for early access, exclusive creator perks, and community invites.</p>
-
             {!waitlistSubmitted ? (
               <form
                 onSubmit={async (e) => {
                   e.preventDefault();
                   if (!waitlistEmail) return;
                   
-                  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzphIQm2S45BKKsxjYaUgVwqNMbm-p0smnAChvx0mSFbvUDwvMswt7bBKiudGCdOvrP/exec';
+                  const SUPABASE_URL = 'https://lihaddxlyychswpkswbp.supabase.co';
+                  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpaGFkZHhseXljaHN3cGtzd2JwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkzNDA5MzQsImV4cCI6MjA4NDkxNjkzNH0.DrBUuz2ayMRCIicYAFNqH2ws3gbRu8ycsbATF54BuFM';
                   
                   try {
-                    const formData = new FormData();
-                    formData.append('email', waitlistEmail);
-
-                    await fetch(GOOGLE_SCRIPT_URL, {
+                    const response = await fetch(`${SUPABASE_URL}/rest/v1/waitlist_emails`, {
                       method: 'POST',
-                      body: formData,
-                      mode: 'no-cors'
+                      headers: {
+                        'Content-Type': 'application/json',
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+                      },
+                      body: JSON.stringify({ email: waitlistEmail })
                     });
                     
-                    setWaitlistSubmitted(true);
+                    if (response.status === 201 || response.status === 200) {
+                      setWaitlistSubmitted(true);
+                    } else if (response.status === 409) {
+                      alert("You are already on the waitlist!");
+                      setWaitlistSubmitted(true);
+                    } else {
+                      const errData = await response.json().catch(() => ({}));
+                      throw new Error(errData.message || 'Failed to join waitlist');
+                    }
                   } catch (error) {
                     console.error("Error submitting to waitlist:", error);
-                    alert("There was an error joining the waitlist. Please try again.");
+                    alert(error.message || "There was an error joining the waitlist. Please try again.");
                   }
                 }}
                 className="flex flex-col sm:flex-row justify-center gap-4 max-w-lg mx-auto pt-4"

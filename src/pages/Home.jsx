@@ -15,6 +15,7 @@ function Home() {
   const navigate = useNavigate()
   const [waitlistEmail, setWaitlistEmail] = useState('')
   const [waitlistSubmitted, setWaitlistSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
   
   // Accordion state for FAQs
   const [openFaq, setOpenFaq] = useState(null)
@@ -243,7 +244,9 @@ function Home() {
               <form
                 onSubmit={async (e) => {
                   e.preventDefault();
-                  if (!waitlistEmail) return;
+                  if (!waitlistEmail || isSubmitting) return;
+                  
+                  setIsSubmitting(true);
                   
                   const SUPABASE_URL = 'https://lihaddxlyychswpkswbp.supabase.co';
                   const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpaGFkZHhseXljaHN3cGtzd2JwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkzNDA5MzQsImV4cCI6MjA4NDkxNjkzNH0.DrBUuz2ayMRCIicYAFNqH2ws3gbRu8ycsbATF54BuFM';
@@ -271,6 +274,8 @@ function Home() {
                   } catch (error) {
                     console.error("Error submitting to waitlist:", error);
                     alert(error.message || "There was an error joining the waitlist. Please try again.");
+                  } finally {
+                    setIsSubmitting(false);
                   }
                 }}
                 className="flex flex-col sm:flex-row justify-center gap-4 max-w-lg mx-auto pt-4"
@@ -279,12 +284,17 @@ function Home() {
                   type="email"
                   placeholder="Enter your email"
                   required
+                  disabled={isSubmitting}
                   value={waitlistEmail}
                   onChange={(e) => setWaitlistEmail(e.target.value)}
-                  className="flex-grow px-6 py-4 rounded-2xl bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-vibrant-green/50 transition-shadow"
+                  className="flex-grow px-6 py-4 rounded-2xl bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-vibrant-green/50 transition-shadow disabled:opacity-50"
                 />
-                <button type="submit" className="bg-vibrant-green text-deep-black px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-[0_0_30px_rgba(45,214,14,0.4)] transition-all whitespace-nowrap">
-                  Join Beta
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="bg-vibrant-green text-deep-black px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-[0_0_30px_rgba(45,214,14,0.4)] transition-all whitespace-nowrap disabled:opacity-75 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? 'Joining...' : 'Join Beta'}
                 </button>
               </form>
             ) : (

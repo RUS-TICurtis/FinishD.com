@@ -21,7 +21,7 @@ function TermsPage() {
             Terms of Use
           </h1>
           <div className="text-white/50 text-sm bg-white/5 inline-block px-4 py-2 rounded-full border border-white/10">
-            Last Updated: April 28, 2026
+            Last Updated: June 1, 2026
           </div>
         </header>
 

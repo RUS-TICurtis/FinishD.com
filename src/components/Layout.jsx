@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import ScrollToTop from './ScrollToTop';
 import Header from './Header';
 import Footer from './Footer';
+import BackToTop from './BackToTop';
 
 function Layout({ children }) {
   const { pathname } = useLocation();
@@ -17,6 +18,8 @@ function Layout({ children }) {
       <main className="pt-24">
         {children}
       </main>
+
+      <BackToTop />
 
       <Footer />
     </div>

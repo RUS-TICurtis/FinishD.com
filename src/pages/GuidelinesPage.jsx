@@ -21,7 +21,7 @@ function GuidelinesPage() {
             Guidelines for a safe, spoiler-free, and passionate entertainment community.
           </p>
           <p className="text-sm text-white/50 uppercase tracking-widest mt-8 font-bold">
-            Last Updated: {currentDate}
+            Last Updated: JUNE 1, 2026
           </p>
         </section>
 
@@ -132,7 +132,7 @@ function GuidelinesPage() {
           <section className="border-t border-white/10 my-16 pt-12">
             <h3 className="text-2xl text-white font-bold mb-4">Questions about our policies?</h3>
             <p>
-              If you need clarification on these guidelines or wish to appeal a moderation decision, please reach out to our team at <a href="#" className="text-vibrant-green hover:underline underline-offset-4 transition-all">support@finishd.com</a>.
+              If you need clarification on these guidelines or wish to appeal a moderation decision, please reach out to our team at <a href="#" className="text-vibrant-green hover:underline underline-offset-4 transition-all">support@finishd.org</a>.
             </p>
           </section>
 

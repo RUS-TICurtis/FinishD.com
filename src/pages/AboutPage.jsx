@@ -78,6 +78,121 @@ function AboutPage() {
 
 
 
+function ImageMarquee() {
+  const images = [
+    { src: '/Community-screen.jpg', title: 'Community Chat' },
+    { src: '/comms.jpg', title: 'Community Discovery' },
+    { src: '/creator.jpg', title: 'Creator Feed' },
+    { src: '/discover.jpg', title: 'Instant Discovery' }
+  ];
+  
+  const [currentIndex, setCurrentIndex] = React.useState(0);
+  const [direction, setDirection] = React.useState('right'); // 'left' or 'right'
+  const [isPlaying, setIsPlaying] = React.useState(true);
+
+  React.useEffect(() => {
+    if (!isPlaying) return;
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => {
+        if (direction === 'right') {
+          return (prevIndex + 1) % images.length;
+        } else {
+          return (prevIndex - 1 + images.length) % images.length;
+        }
+      });
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [direction, isPlaying, images.length]);
+
+  const handlePrev = () => {
+    setDirection('left');
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  };
+
+  const handleNext = () => {
+    setDirection('right');
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  return (
+    <div className="flex flex-col gap-6 w-full">
+      {/* Card Container */}
+      <div className="relative h-[400px] md:h-[500px] rounded-[3rem] overflow-hidden border border-white/10 bg-white/5 backdrop-blur-lg group hover:border-white/20 transition-colors duration-500">
+        
+        {/* Slides */}
+        <div className="absolute inset-0 w-full h-full p-6">
+          <div className="relative w-full h-full rounded-[2rem] overflow-hidden">
+            {images.map((img, idx) => {
+              const isActive = idx === currentIndex;
+              return (
+                <div
+                  key={idx}
+                  className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+                    isActive 
+                      ? 'opacity-100 scale-100 z-10 translate-x-0' 
+                      : 'opacity-0 scale-95 -z-10 absolute pointer-events-none'
+                  }`}
+                >
+                  <img
+                    src={img.src}
+                    alt={img.title}
+                    className="w-full h-full object-cover rounded-[2rem] opacity-90 group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute bottom-5 right-5 z-20 bg-black/70 backdrop-blur-xs border border-white/10 px-5 py-2.5 rounded-full text-white text-sm font-bold tracking-wide">
+                    {img.title}
+                  </div>
+                </div>
+              );
+            })}
+            <div className="absolute inset-0 bg-gradient-to-tr from-black/90 via-black/40 to-transparent pointer-events-none z-10"></div>
+          </div>
+        </div>
+
+        {/* Left Edge Arrow */}
+        <button
+          onClick={handlePrev}
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-30 p-4 rounded-full border border-white/10 bg-black/40 backdrop-blur-md text-white hover:bg-vibrant-green hover:text-deep-black hover:border-vibrant-green hover:shadow-[0_0_20px_rgba(45,214,14,0.4)] transition-all duration-300"
+          title="Previous Image"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+        </button>
+
+        {/* Right Edge Arrow */}
+        <button
+          onClick={handleNext}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-30 p-4 rounded-full border border-white/10 bg-black/40 backdrop-blur-md text-white hover:bg-vibrant-green hover:text-deep-black hover:border-vibrant-green hover:shadow-[0_0_20px_rgba(45,214,14,0.4)] transition-all duration-300"
+          title="Next Image"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+
+      {/* Detached Indicators below card */}
+      <div className="flex items-center justify-center gap-2.5 z-20">
+        {images.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => {
+              setCurrentIndex(idx);
+              setIsPlaying(false);
+            }}
+            className={`h-3 rounded-full transition-all duration-300 ${
+              idx === currentIndex
+                ? 'bg-vibrant-green w-8 shadow-[0_0_10px_rgba(45,214,14,0.5)]'
+                : 'bg-white/20 hover:bg-white/40 w-3'
+            }`}
+            title={`Go to slide ${idx + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function AboutPage() {
   return (
     <div className="bg-[#0A0A0A] min-h-screen pt-32 pb-24 px-8 relative overflow-hidden font-sans">
@@ -109,11 +224,7 @@ function AboutPage() {
               We exist to eliminate the friction between wanting to watch something and actually hitting play—all while surrounding you with a community that shares your passion.
             </p>
           </div>
-          <div className="relative h-[400px] md:h-[500px] rounded-[3rem] overflow-hidden border border-white/10 bg-white/5 backdrop-blur-lg flex items-center justify-center p-8 group hover:border-white/20 transition-colors duration-500">
-            {/* App Ecosystem Graphic Placeholder */}
-            <img src="/Community-screen.jpg" alt="App Ecosystem Graphic" className="w-full h-full object-cover rounded-[2rem] opacity-60 group-hover:scale-105 transition-transform duration-700" />
-            <div className="absolute inset-0 bg-gradient-to-tr from-black/90 via-black/40 to-transparent pointer-events-none"></div>
-          </div>
+          <ImageMarquee />
         </section>
 
         {/* 3. Core Values (Bento Box) */}

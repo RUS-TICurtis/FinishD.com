@@ -160,7 +160,7 @@ function HelpPage() {
                 Contact Support
               </Link>
               <p className="text-white/50">
-                Or email us directly at <a href="#" className="text-white hover:text-vibrant-green transition-colors underline underline-offset-4">support@finishd.com</a>
+                Or email us directly at <a href="#" className="text-white hover:text-vibrant-green transition-colors underline underline-offset-4">support@finishd.org</a>
               </p>
             </div>
           </div>

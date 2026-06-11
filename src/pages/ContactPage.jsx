@@ -77,7 +77,7 @@ function ContactPage() {
             <div>
               <p className="text-white/50 text-sm font-bold uppercase tracking-widest mb-2">Direct Email</p>
               <a href="#" className="text-2xl font-bold text-white hover:text-vibrant-green transition-colors">
-                support@finishd.com
+                support@finishd.org
               </a>
             </div>
             

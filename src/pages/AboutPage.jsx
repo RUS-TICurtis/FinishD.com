@@ -95,15 +95,6 @@ function AboutPage() {
           <p className="text-xl md:text-2xl text-white/70 max-w-3xl mx-auto leading-relaxed transition-opacity duration-700 delay-100 animate-fade-in-up">
             We believe finding a great movie shouldn't be harder than actually watching one.
           </p>
-
-          {/* Abstract Brand Hero Graphic Placeholder */}
-          <div className="relative h-[300px] md:h-[400px] w-full rounded-[3rem] overflow-hidden mt-12 border border-white/10 shadow-2xl transition-opacity duration-700 delay-200">
-            <div className="w-full h-full bg-black flex items-center justify-center relative">
-              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/noise-lines.png')] opacity-20 mix-blend-overlay"></div>
-              <div className="w-[120%] h-1 bg-vibrant-green shadow-[0_0_30px_rgba(45,214,14,1)] rounded-full transform -rotate-6"></div>
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-          </div>
         </section>
 
         {/* 2. The Mission Section (The "Why") */}

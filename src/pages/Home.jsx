@@ -51,28 +51,34 @@ function Home() {
             </p>
             
             <div className="pt-4 space-y-6">
-              <a href="#waitlist" className="inline-flex items-center justify-center gap-3 bg-vibrant-green text-deep-black px-10 py-5 rounded-2xl font-black text-xl hover:scale-105 transition-all shadow-[0_0_40px_rgba(45,214,14,0.3)] hover:shadow-[0_0_60px_rgba(45,214,14,0.5)]">
+              {/* <a href="#waitlist" className="inline-flex items-center justify-center gap-3 bg-vibrant-green text-deep-black px-10 py-5 rounded-2xl font-black text-xl hover:scale-105 transition-all shadow-[0_0_40px_rgba(45,214,14,0.3)] hover:shadow-[0_0_60px_rgba(45,214,14,0.5)]">
                 Join the Waitlist
                 <LucideChevronRight size={24} />
-              </a>
+              </a> */}
               
               <div className="flex flex-col gap-3">
-                <p className="text-sm font-bold text-on-surface/50 uppercase tracking-widest">Available soon on iOS and Android</p>
+                <p className="text-sm font-bold text-on-surface/50 uppercase tracking-widest">Now Available on iOS and Android</p>
                 <div className="flex flex-wrap gap-4">
-                  <div className="flex items-center gap-3 bg-deep-black text-white px-6 py-3 rounded-xl font-bold opacity-80 border border-white/10">
+                  <a href="https://apps.apple.com/">
+                  <div className="flex items-center gap-3 bg-deep-black text-white px-6 py-3 rounded-xl font-bold  border border-white/10">
                     <AppleStoreIcon className="w-5 h-5" />
                     <div className="text-left">
                       <div className="text-[9px] uppercase leading-none opacity-60">Download on the</div>
                       <div className="text-sm leading-none">App Store</div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3 bg-deep-black text-white px-6 py-3 rounded-xl font-bold opacity-80 border border-white/10">
+                  </a>
+
+                  <a href="https://play.google.com/store/apps/details?id=com.finishd&pli=1">
+                  <div className="flex items-center gap-3 bg-deep-black text-white px-6 py-3 rounded-xl font-bold  border border-white/10">
                     <GooglePlayIcon className="w-5 h-5" />
                     <div className="text-left">
                       <div className="text-[9px] uppercase leading-none opacity-60">Get it on</div>
                       <div className="text-sm leading-none">Google Play</div>
                     </div>
                   </div>
+                  </a>
+                  
                 </div>
               </div>
             </div>
@@ -233,7 +239,7 @@ function Home() {
       </section>
 
       {/* Waitlist CTA Section */}
-      <section id="waitlist" className="px-8 py-32 bg-deep-black">
+      {/* <section id="waitlist" className="px-8 py-32 bg-deep-black">
         <div className="max-w-[1100px] mx-auto rounded-[3rem] bg-white/5 backdrop-blur-lg border border-white/10 p-12 text-center relative overflow-hidden shadow-2xl">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-vibrant-green/10 blur-[120px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/3"></div>
           
@@ -306,7 +312,7 @@ function Home() {
             )}
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   )
 }

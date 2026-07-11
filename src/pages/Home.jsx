@@ -59,7 +59,7 @@ function Home() {
               <div className="flex flex-col gap-3">
                 <p className="text-sm font-bold text-on-surface/50 uppercase tracking-widest">Now Available on iOS and Android</p>
                 <div className="flex flex-wrap gap-4">
-                  <a href="https://apps.apple.com/">
+                  <a href="https://apps.apple.com/us/app/finishd/id6758900022">
                   <div className="flex items-center gap-3 bg-deep-black text-white px-6 py-3 rounded-xl font-bold  border border-white/10">
                     <AppleStoreIcon className="w-5 h-5" />
                     <div className="text-left">
